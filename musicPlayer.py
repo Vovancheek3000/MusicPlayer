@@ -31,22 +31,17 @@ class Player:
             meny = meny.get(3)
 
 
-        if meny == 'PlaySong':
+        if meny == 'RemoveSongs':
             self._show_song()
             choice = self._get_choice()
             song = self.__song_list[choice]
             self._play(song)
-        elif meny == 'RemoveSong':
-            self._show_song()
-
-
-
-    def remove_song(self, song):
+    def delete_song(self, song):
         if song in self.__song_list:
-            pass
-            print(f'{song} has been deleted from song list')
+            self.__song_list.remove(song)
+            print(f"{song.title} has been deleted.")
         else:
-            print('Song isnt detected in list')
+            print(f"{song.title} is not in the list.")
 
 
 
